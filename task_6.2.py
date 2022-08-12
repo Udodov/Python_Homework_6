@@ -1,6 +1,5 @@
 numbers = list()
-for i in range(5):
-    numbers.append(int(input(f'Enter a number № {i + 1} -->')))
+numbers_list = [i for i in range(5) if numbers.append(int(input(f'Enter a number № {i + 1} -->')))]
 print(numbers)
 
 maximum = numbers[0]
