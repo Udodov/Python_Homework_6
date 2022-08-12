@@ -8,17 +8,13 @@ def read_from_file(path_file: str) -> str:
 
 
 def del_some_words(text: str) -> str:
-    text = []
-    for item in read_text:
-        if deleted_word not in item:
-            text.append(item)
+    text = list(filter(lambda x: deleted_word not in x, text.split()))
     return " ".join(text)
 
 
 path = os.path.join('documentation6', 'task_6.1.txt')
 
-read_text = read_from_file(path).split()
-print(f'There is text in the file:\n ', " ".join(read_text))
+print(f'There is text in the file:\n ', read_from_file(path))
 deleted_word = input('Enter the word you want to remove from the text as a string:')
 print()
 print(f'The final text looks like this:\n ', del_some_words(read_from_file(path)))
